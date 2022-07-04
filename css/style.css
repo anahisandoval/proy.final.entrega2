@@ -1,0 +1,485 @@
+/*importación de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,500;1,200;1,800;1,900&display=swap');
+
+/*reseteo del html*/
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+html{
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background-color: rgb(124, 121, 121);
+  font-size: 1em;
+}
+
+@keyframes aparecer {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+  }
+
+h1{
+    font-size: 3em;
+    animation-duration: 8s;
+    animation-name: aparecer;
+    animation-iteration-count: infinite;
+    text-align: center;
+}
+
+h3{
+  font-size: 1.5em;
+  color: antiquewhite;
+  text-align: center;
+}
+
+
+/*GRILLA DEL INDEX*/
+
+#grilla{
+    display: grid;
+    grid-template-areas: 
+        "logo  header  clima"
+        "logo  nav   clima"
+        "productos    servicios   servicios"
+        "productos    servicios   servicios"
+        "publicidad publicidad  publicidad"
+        "footer    footer  footer";
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: 0.5fr 0.5fr 2fr 1fr 3fr auto;
+    align-content: stretch;
+}
+header{
+    grid-area: header;
+    background:rgb(6, 146, 151);
+}
+
+footer{
+    grid-area: footer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: linear-gradient(to top,rgb(6, 146, 151),rgb(2, 57, 65),rgb(6, 146, 151));
+}
+#grilla>aside>section {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    padding-top: 1cm;
+}
+
+@keyframes efecto{
+    0%{ width: 100px; }
+    25%{ width: 200px; }
+    50%{ width: 200px;}
+    75%{ width: 200px;}
+    100%{ width: 100px;}
+  } 
+
+#grilla>aside>section img {
+    animation-name: efecto;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-duration: 20s;
+  animation-delay: 10s;
+
+}
+
+nav{
+    grid-area: nav;
+    background: linear-gradient(to top,rgb(6, 146, 151),rgb(2, 57, 65),rgb(6, 146, 151));
+}
+/*
+nav>.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50vw;
+}
+nav>.menu p{
+    color:black;
+
+}
+
+nav>.menu> li{
+    list-style-type: none;
+  }
+*/
+aside{
+    grid-area: publicidad;
+}
+
+/*SECCION DE PRODUCTOS (REPRODUCTOR)*/
+section#productos{
+    grid-area: productos;
+    align-self: center;
+    justify-self: center;
+    padding-left: 2cm;
+    padding-right: 1cm;
+}
+
+/*SECCION DE SERVICIOS (NOTICIA DEL INDEX)*/
+section#servicios{
+    grid-area: servicios;
+    align-self: center;
+    justify-self: center;
+    padding-right: 2cm;
+    padding-left: 1cm;
+}
+
+
+/*GRILLA DE QUIENES SOMOS*/
+#grilla-quienes{
+    display: grid;
+    grid-template-areas: 
+    "logo header clima"
+    "logo nav clima"
+    "imagenq  textoq textoq"
+    "imagenq textoq textoq"
+    "footer footer footer";
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: 0.5fr 0.5fr 2fr 2fr auto;
+    align-content: stretch;
+}
+
+
+/*SECCION DE QUIENES SOMOS (TEXTO)*/
+section#textoq{
+    grid-area: textoq;
+    align-self: center;
+    text-align: justify;
+    padding-top: 1cm;
+    padding-right: 2cm;
+    padding-left: 2cm;
+}
+
+/*SECCION DE QUIENES SOMOS (IMAGEN)*/
+section#imagenq{
+    grid-area: imagenq;
+    align-self: center;
+    justify-self: center;
+    padding-top: 1cm;
+    padding-left: 2cm;
+}
+/*
+#imagenq> img{
+    width: 250px;
+    height: 250px;
+    padding-left: 1px;
+    
+}*/
+
+/*GRILLA DE NOTICIAS*/
+#grilla-noti{
+    display: grid;
+    grid-template-areas: 
+        "logo  header  clima"
+        "logo  nav   clima"
+        "img_n   texto_n texto_n"
+        "img_n2   texto_n2 texto_n2"
+        "footer    footer  footer";
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: 0.5fr 0.5fr 2fr 2fr auto;
+    align-content: stretch;
+}
+
+/*GRILLA DE BANDA*/
+#grilla-banda{
+    display: grid;
+    grid-template-areas: 
+        "logo   header  clima"
+        "logo   nav     clima"
+        "banda1 banda1  banda1"
+        "footer footer  footer";
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: 0.5fr 0.5fr 5fr auto;
+    align-content: stretch;
+}
+
+#grilla-banda>#banda1 {
+    grid-area: banda1;
+    justify-self: center;
+    justify-self: center;
+    padding-top: 1cm;
+    padding-left: 2cm;
+    padding-top: 1cm;
+    padding-bottom: 2cm;
+}
+
+
+/*GRILLA DE CONTACTO*/
+#grilla-contacto{
+    display: grid;
+    grid-template-areas: 
+    "logo header clima"
+    "logo nav clima"
+    "img_micro  formulario formulario"
+    "footer footer footer";
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: 0.5fr 0.5fr 2fr auto;
+    align-content: stretch;
+}
+
+
+/*SECCION DE CONTACTO*/
+section#img_micro{
+    grid-area: img_micro;
+}
+
+section#formulario{
+    grid-area: formulario;
+}
+/*SECCION DE NOTICIAS  (TEXTO)*/
+section#texto_n{
+    grid-area: texto_n;
+    align-self: center;
+    justify-self: center;
+    padding-top: 2cm;
+}
+
+/*SECCION DE NOTICIAS  (IMAGEN)*/
+section#img_n{
+    grid-area: img_n;
+    align-self: center;
+    justify-self: center;
+}
+
+#img_n> img{
+    width: 200px;
+    height: 200px;
+    
+}
+
+/*SECCION DE NOTICIAS  (IMAGEN)*/
+section#texto_n2{
+    grid-area: texto_n2;
+    align-self: center;
+    justify-self: center;
+    padding-top: 2cm;
+}
+
+/*SECCION DE NOTICIAS  (IMAGEN)*/
+section#img_n2{
+    grid-area: img_n2;
+    align-self: center;
+    justify-self: center;
+}
+#img_n2> img{
+    width: 200px;
+    height: 200px;
+    
+}
+
+
+footer>.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+footer>.redes> a{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+footer> p{
+    text-align: center;
+    color: aliceblue;
+}
+img#logo{
+    grid-area: logo;
+    width: 120px;
+    height: 120px;
+    border-radius: 30%;
+    align-self: center;
+    justify-self: center;
+
+}
+
+img#clima{
+    grid-area: clima;
+    width: 180px;
+    height: 100px;
+    align-self: center;
+    justify-self: center;
+
+}
+
+@media screen and (min-width:701px) and (max-width:1069px){
+    #grilla{
+        grid-template-areas: 
+            "header header header"
+            "logo nav productos"
+            "servicios servicios servicios"
+            "publicidad publicidad publicidad"
+            "footer footer footer";
+        grid-template-columns: repeat(3,33%);
+        grid-template-rows: repeat(5,auto);
+    }
+    nav{
+        background: rgb(124, 121, 121);
+    }
+    nav>.menu{
+       /* flex-direction: column;*/
+        align-items: center; 
+    }
+    nav>.menu p{
+        font-size: 10px;
+    }
+
+    #grilla>aside>section img{
+        width: 200px;
+        height: 200px;
+    }
+    
+    h1{
+        font-size: 1em;
+    }
+    
+    
+    header{
+        background:rgb(124, 121, 121); 
+        padding-top: 1cm;
+        padding-bottom: 0;
+    }
+
+    img#clima{
+        display: none;
+    }
+    img#logo{
+        width: 120px;
+        height: 120px;
+    }
+    section#productos{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    section#productos> iframe{
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 3cm;
+    }
+    
+    footer{
+        padding-top: auto;
+        padding-bottom: auto;
+    }
+
+    p{
+        font-size: 10px;
+    }
+
+    
+    #grilla-noti{
+        grid-template-areas: 
+            "header header"
+            "logo nav"
+            "texto_n texto_n2"
+            "img_n img_n2"
+            "footer footer";
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(5,auto);
+        padding: auto;
+    }
+    #img_n2> img{
+        width: 100px;
+        height: 100px;
+        
+    }
+    #img_n> img{
+        width: 100px;
+        height: 100px;
+        
+    }
+}
+@media screen and (max-width:700px){
+    
+    #grilla{
+        grid-template-areas: 
+            "header header"
+            "logo nav"
+            "productos productos"
+            "servicios servicios"
+            "publicidad publicidad"
+            "footer footer";
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(6,auto);
+    }
+    
+    nav>.menu{
+       /* flex-direction: column;*/
+        justify-content:space-between;
+    }
+    nav>.menu p{
+        font-size: 12px;
+    }
+    #grilla>aside>section img{
+        width: 80px;
+        height: 80px;
+    }
+    
+    h1{
+        font-size: 1em;
+      }
+    
+    nav{
+        background: rgb(124, 121, 121);
+    }
+    header{
+        background:rgb(124, 121, 121); 
+        padding-top: 1cm;
+        padding-bottom: 0;
+    }
+
+    img#clima{
+        display: none;
+    }
+    img#logo{
+        width: 60px;
+        height: 60px;
+    }
+    section#productos{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    section#productos> iframe{
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 12cm;
+    }
+    section#servicios{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    footer{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    p{
+        font-size: 10px;
+    }
+    
+    #grilla-noti{
+        grid-template-areas: 
+            "header header"
+            "logo nav"
+            "texto_n img_n"
+            "texto_n2 img_n2"
+            "footer footer";
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(5,auto);
+    }
+
+    #img_n2> img{
+        width: 150px;
+        height: 150px;
+    }
+
+    #img_n> img{
+        width: 150px;
+        height: 150px;
+        
+    }
+}
