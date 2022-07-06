@@ -33,13 +33,28 @@ footer{
     animation-duration:2s;
     animation-iteration-count: initial;
 }
+#publicidad1{
+    animation-name: backInLeft;
+    animation-duration:2s;
+    animation-iteration-count: initial;
+}
+#publicidad2{
+    animation-name: backInUp;
+    animation-duration:2s;
+    animation-iteration-count: initial;
+}
+#publicidad3{
+    animation-name: backInRight;
+    animation-duration:2s;
+    animation-iteration-count: initial;
+}
 
 @media screen and (min-width: 551px) and (max-width: 1200px) {
     #micro{
         width: 20rem;
         height: 30rem;
     }
-    #clima{
+    .clima{
         display: none;
     }
 }
@@ -47,7 +62,7 @@ footer{
     #micro{
         display:none;
     }
-    #clima{
+    .clima{
         display: none;
     }
 }
